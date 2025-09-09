@@ -53,11 +53,35 @@
     a {
       color: #2a5d9f;
     }
+    form {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-top: 2rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: inherit;
+    }
+    button {
+      background-color: #2a5d9f;
+      color: white;
+      padding: 0.7rem 1.2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://raw.githubusercontent.com/hagitkap/job-board/main/Hagit%20I.K%20LOGO.png" alt="Hagit I.K. Logo" />
+    <img src="Hagit I.K LOGO.png" alt="Hagit I.K. Logo" />
     <div>
       <h1>Hagit I.K. – TALENTS TO SUCCESSES</h1>
       <p>למצוא את המשרה שעוד לא ידעתם שאתם רוצים</p>
@@ -66,9 +90,8 @@
 
   <div class="job">
     <h2>מנהל/ת מכירות – תחום תיירות יוצאת</h2>
-    <p><strong>מיקום:</strong> נתחיל בת\"א, עבודה באתר החברה באשקלון</p>
+    <p><strong>מיקום:</strong> תל אביב</p>
     <p><strong>סוג לקוחות:</strong> B2C – בודדים</p>
-    <p><strong>טווח שכר מוערך:</strong> 20–25K</p>
     <p><strong>קוד משרה:</strong> JB-86</p>
 
     <div class="section-title">תיאור התפקיד:</div>
@@ -95,13 +118,23 @@
     <ul>
       <li>שליטה במערכות תיירות (Amadeus וכו')</li>
     </ul>
-
-    <div class="section-title">לשליחת קורות חיים:</div>
-    <p>
-      שלחו ל: <a href="mailto:eshet-hr@cvwebmail.net">eshet-hr@cvwebmail.net</a><br />
-      חובה לציין קוד משרה JB-86 ולכתוב ב-CC את הסוכנת.
-    </p>
   </div>
+
+  <form action="mailto:hagitkap@gmail.com" method="POST" enctype="text/plain">
+    <h2>שליחת קורות חיים</h2>
+    <label>שם מלא:</label>
+    <input type="text" name="שם" required />
+
+    <label>אימייל:</label>
+    <input type="email" name="אימייל" required />
+
+    <label>קצת עליך:</label>
+    <textarea name="הודעה" rows="4" placeholder="כתבו כמה מילים על עצמכם..."></textarea>
+
+    <label>צרפו קובץ קו"ח (ישירות דרך האימייל לאחר השליחה)</label>
+
+    <button type="submit">שלח קורות חיים</button>
+  </form>
 
   <div class="footer">
     <p>ליצירת קשר: <a href="https://www.linkedin.com/in/hagitido/">LinkedIn של חגית</a></p>
