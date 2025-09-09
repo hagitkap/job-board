@@ -2,142 +2,100 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>לוח משרות – Hagit I.K.</title>
   <style>
-    body {
-      font-family: sans-serif;
-      margin: 2rem;
-      background-color: #fefefe;
-      color: #333;
-    }
-    header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    header img {
-      width: 100px;
-      border-radius: 12px;
-    }
-    header h1 {
-      color: #a88944;
-      font-size: 1.8rem;
-      margin: 0;
-    }
-    header p {
-      margin: 0;
-      font-size: 1rem;
-    }
-    .job {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-    }
-    .job h2 {
-      margin-top: 0;
-    }
-    .section-title {
-      font-weight: bold;
-      margin-top: 1rem;
-    }
-    .footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #777;
-      text-align: center;
-    }
-    a {
-      color: #2a5d9f;
-    }
-    form {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-top: 2rem;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 0.5rem;
-      margin-top: 0.5rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-family: inherit;
-    }
-    button {
-      background-color: #2a5d9f;
-      color: white;
-      padding: 0.7rem 1.2rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
+    :root{--brand:#a88944;--ink:#333;--bg:#f7f7f7;--link:#2a5d9f}
+    *{box-sizing:border-box}
+    body{font-family:sans-serif;margin:0;background:var(--bg);color:var(--ink)}
+    header{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;background:#fff;border-bottom:1px solid #eee}
+    header img{width:80px;border-radius:12px}
+    header h1{color:var(--brand);font-size:1.6rem;margin:0}
+    header p{margin:.25rem 0 0;color:#666}
+    .shell{max-width:980px;margin:0 auto;padding:1.25rem}
+    .tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:.5rem 0 1rem}
+    .tabbtn{background:#fff;border:1px solid #e5e5e5;border-radius:999px;padding:.5rem 1rem;cursor:pointer}
+    .tabbtn.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+    .card{background:#fff;border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.06);padding:1rem;display:flex;flex-direction:column;gap:.5rem}
+    .card h3{margin:.25rem 0;font-size:1.05rem}
+    .meta{color:#666;font-size:.9rem}
+    .chip{display:inline-block;background:#f0f0f0;border-radius:999px;padding:.15rem .6rem;margin-inline-start:.25rem;font-size:.8rem}
+    .actions{margin-top:auto;display:flex;gap:.5rem;flex-wrap:wrap}
+    .btn{background:var(--link);color:#fff;border:none;border-radius:10px;padding:.5rem .8rem;cursor:pointer;text-decoration:none;display:inline-block}
+    .btn.secondary{background:#fff;color:var(--link);border:1px solid var(--link)}
+    footer{margin:2rem auto 3rem;max-width:980px;text-align:center;color:#777}
+    footer a{color:var(--link)}
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Hagit I.K. Logo" />
+    <img src="logo.png" alt="Hagit I.K. Logo"/>
     <div>
       <h1>Hagit I.K. – TALENTS TO SUCCESSES</h1>
-      <p>למצוא את המשרה שעוד לא ידעתם שאתם רוצים</p>
+      <p>בחרו קטגוריה, פתחו כרטיס, ושלחו קו״ח בקליק.</p>
     </div>
   </header>
 
-  <div class="job">
-    <h2>מנהל/ת מכירות – תחום תיירות יוצאת</h2>
-    <p><strong>מיקום:</strong> תל אביב</p>
-    <p><strong>סוג לקוחות:</strong> B2C – בודדים</p>
-    <p><strong>קוד משרה:</strong> JB-86</p>
+  <div class="shell">
+    <div class="tabs" role="tablist" aria-label="קטגוריות משרות">
+      <button class="tabbtn active" data-cat="sales" role="tab" aria-selected="true">משרות במכירות</button>
+      <button class="tabbtn" data-cat="software" role="tab" aria-selected="false">משרות בתוכנה</button>
+      <button class="tabbtn" data-cat="hardware" role="tab" aria-selected="false">משרות בחומרה</button>
+    </div>
 
-    <div class="section-title">תיאור התפקיד:</div>
-    <p>אחריות כוללת על הובלת מערך המכירות לבודדים, כולל ניהול מוקדים, פיתוח קשרים עם סוכני נסיעות, שיתוף פעולה עם שיווק ואופרציה ועוד.</p>
+    <!-- SALES -->
+    <section id="cat-sales" class="grid" aria-label="משרות במכירות">
+      <article class="card">
+        <h3>מנהל/ת מכירות – תחום תיירות יוצאת</h3>
+        <div class="meta"><span class="chip">תל אביב</span><span class="chip">קוד JB-86</span></div>
+        <p>הובלת מערך מכירות לבודדים, ניהול מוקדים, שיתופי פעולה עם סוכני נסיעות ותיאום עם שיווק ואופרציה.</p>
+        <div class="actions">
+          <a class="btn" href="job-708409.html">לפרטים</a>
+          <a class="btn secondary" href="mailto:hagitkap@gmail.com?subject=מועמדות - JB-86">שליחת קו״ח</a>
+        </div>
+      </article>
+    </section>
 
-    <div class="section-title">תחומי אחריות:</div>
-    <ul>
-      <li>ניהול צוותי מכירות, After Sale ו-Back Office</li>
-      <li>עמידה ביעדים והטמעת תהליכים מקצועיים</li>
-      <li>פיתוח קשרי עבודה עם סוכנים</li>
-      <li>שיתוף פעולה עם שיווק ואופרציה</li>
-      <li>הובלת תהליכי שירות ומכירה</li>
-    </ul>
+    <!-- SOFTWARE -->
+    <section id="cat-software" class="grid" aria-label="משרות בתוכנה" hidden>
+      <article class="card">
+        <h3>ראש/ת צוות תוכנה Embedded</h3>
+        <div class="meta"><span class="chip">כרמיאל</span><span class="chip">קוד #675061</span></div>
+        <p>הובלת צוות (כ-10) מהנדסי Embedded וניהול פרויקטים מקצה לקצה עבור מוצרים קיימים ודור העתיד.</p>
+        <div class="actions">
+          <a class="btn" href="job-675061.html">לפרטים</a>
+          <a class="btn secondary" href="mailto:hagitkap@gmail.com?subject=מועמדות - #675061">שליחת קו״ח</a>
+        </div>
+      </article>
+    </section>
 
-    <div class="section-title">דרישות חובה:</div>
-    <ul>
-      <li>ניסיון ניהולי של 3 שנים לפחות</li>
-      <li>ניסיון קודם בתיירות – חובה!</li>
-      <li>ניסיון בניהול מוקדים</li>
-      <li>שליטה באקסל ובאופיס</li>
-    </ul>
-
-    <div class="section-title">יתרונות:</div>
-    <ul>
-      <li>שליטה במערכות תיירות (Amadeus וכו')</li>
-    </ul>
+    <!-- HARDWARE -->
+    <section id="cat-hardware" class="grid" aria-label="משרות בחומרה" hidden>
+      <article class="card">
+        <h3>— בקרוב משרות בחומרה —</h3>
+        <div class="meta"><span class="chip">פתוח להוספה</span></div>
+        <p>כאן יופיעו משרות חומרה נוספות.</p>
+      </article>
+    </section>
   </div>
 
-  <form action="mailto:hagitkap@gmail.com" method="POST" enctype="text/plain">
-    <h2>שליחת קורות חיים</h2>
-    <label>שם מלא:</label>
-    <input type="text" name="שם" required />
+  <footer>
+    <p>ליצירת קשר: <a href="https://www.linkedin.com/in/hagit-ido-kaplan-3a87bb2b/">LinkedIn של חגית</a> · <a href="mailto:hagitkap@gmail.com">hagitkap@gmail.com</a></p>
+  </footer>
 
-    <label>אימייל:</label>
-    <input type="email" name="אימייל" required />
-
-    <label>קצת עליך:</label>
-    <textarea name="הודעה" rows="4" placeholder="כתבו כמה מילים על עצמכם..."></textarea>
-
-    <label>צרפו קובץ קו"ח (ישירות דרך האימייל לאחר השליחה)</label>
-
-    <button type="submit">שלח קורות חיים</button>
-  </form>
-
-  <div class="footer">
-    <p>ליצירת קשר: <a href="https://www.linkedin.com/in/hagit-ido-kaplan-3a87bb2b/">LinkedIn של חגית</a></p>
-  </div>
+  <script>
+    const tabs = document.querySelectorAll('.tabbtn');
+    const sections = {
+      sales: document.getElementById('cat-sales'),
+      software: document.getElementById('cat-software'),
+      hardware: document.getElementById('cat-hardware'),
+    };
+    function show(cat){
+      Object.entries(sections).forEach(([k,sec])=>sec.hidden = k!==cat);
+      tabs.forEach(b=>b.classList.toggle('active', b.dataset.cat===cat));
+    }
+    tabs.forEach(b=> b.addEventListener('click', ()=> show(b.dataset.cat)));
+  </script>
 </body>
 </html>
