@@ -47,8 +47,9 @@
       <button class="tabbtn" data-cat="sales" role="tab" aria-selected="false">משרות במכירות</button>
       <button class="tabbtn" data-cat="software" role="tab" aria-selected="false">משרות בתוכנה</button>
       <button class="tabbtn" data-cat="hardware" role="tab" aria-selected="false">משרות בחומרה</button>
-      <!-- שינוי שם הטאב בלבד -->
       <button class="tabbtn" data-cat="electrical" role="tab" aria-selected="false">משרות לחשמל ואלקטרוניקה</button>
+      <!-- טאב חדש -->
+      <button class="tabbtn" data-cat="mechanical" role="tab" aria-selected="false">משרות למהנדסי מכונות</button>
     </div>
 
     <!-- EXECUTIVES -->
@@ -192,6 +193,19 @@
         </div>
       </article>
     </section>
+
+    <!-- MECHANICAL (חדש) -->
+    <section id="cat-mechanical" class="grid" aria-label="משרות למהנדסי מכונות" hidden>
+      <article class="card">
+        <h3>מנהל/ת יחידת תכנון – תעשייה תהליכית</h3>
+        <div class="meta"><span class="chip">עומר</span><span class="chip">#706032</span><span class="chip">Head/Director</span></div>
+        <p>ניהול מחלקות תכנון, הובלת פרויקטים אסטרטגיים, בקרה על תוצרי תכנון (תהליך/מכונות/צנרת) ושילוב בפיתוח העסקי.</p>
+        <div class="actions">
+          <a class="btn" href="job-706032.html">לפרטים</a>
+          <a class="btn secondary" href="mailto:hagitkap@gmail.com?subject=מועמדות - #706032">שליחת קו״ח</a>
+        </div>
+      </article>
+    </section>
   </div>
 
   <footer>
@@ -207,6 +221,7 @@
       software: document.getElementById('cat-software'),
       hardware: document.getElementById('cat-hardware'),
       electrical: document.getElementById('cat-electrical'),
+      mechanical: document.getElementById('cat-mechanical'),
     };
     function show(cat){
       Object.entries(sections).forEach(([k,sec])=>sec.hidden = k!==cat);
