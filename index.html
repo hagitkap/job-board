@@ -73,13 +73,25 @@
       </div>
 
       <div class="grid">
+        <!-- תיירות -->
         <article class="card" data-sector="תיירות">
           <h3>מנהל/ת מכירות – תחום תיירות יוצאת</h3>
           <div class="meta"><span class="chip">תל אביב</span><span class="chip">JB-86</span><span class="chip">תיירות</span></div>
           <p>הובלת מערך מכירות לבודדים, ניהול מוקדים, שיתופי פעולה עם סוכני נסיעות ותיאום עם שיווק ואופרציה.</p>
           <div class="actions">
-            <a class="btn" href="job-708409.html">לפרטים</a>
+            <a class="btn" href="job-JB-86.html">לפרטים</a>
             <a class="btn secondary" href="mailto:hagitkap@gmail.com?subject=מועמדות - JB-86">שליחת קו״ח</a>
+          </div>
+        </article>
+
+        <!-- טכנולוגי: HVAC/VRF -->
+        <article class="card" data-sector="טכנולוגי">
+          <h3>מהנדס/ת מכירות טכני/ת – HVAC/VRF</h3>
+          <div class="meta"><span class="chip">לא צוין</span><span class="chip">#708409</span><span class="chip">HVAC</span></div>
+          <p>תמיכה טכנית בשטח, Spec-in, הדרכות ותיאום מול צוותים בינ״ל. ניסיון VRF/Chillers ו-AutoCAD – חובה.</p>
+          <div class="actions">
+            <a class="btn" href="job-708409.html">לפרטים</a>
+            <a class="btn secondary" href="mailto:hagitkap@gmail.com?subject=מועמדות - #708409">שליחת קו״ח</a>
           </div>
         </article>
       </div>
@@ -120,7 +132,7 @@
       <article class="card">
         <h3>ר״צ פיתוח תוכנה – Team Lead (Java/AWS)</h3>
         <div class="meta"><span class="chip">פתח תקוה</span><span class="chip">#558858</span></div>
-        <p>הובלת CTO Infrastructure Application Data Team: ניהול אנשים + Hands-on, ענן AWS, Microservices, Generative AI.</p>
+        <p>הובלת CTO Infrastructure Application Data Team: ניהול אנשים + Hands-on, AWS, Microservices, Generative AI.</p>
         <div class="actions">
           <a class="btn" href="job-558858.html">לפרטים</a>
           <a class="btn secondary" href="mailto:hagitkap@gmail.com?subject=מועמדות - #558858">שליחת קו״ח</a>
@@ -130,7 +142,7 @@
       <article class="card">
         <h3>Full Stack Software Engineer – צוות ליבה</h3>
         <div class="meta"><span class="chip">תל אביב · היברידי (יומיים)</span><span class="chip">#716484</span></div>
-        <p>פיתוח End-to-End בפלטפורמת אוטומציה לאבטחת מידע: Python, React + TypeScript, Rust; סקייל וביצועים לפרודקשן.</p>
+        <p>פיתוח End-to-End בפלטפורמת אוטומציה לאבטחת מידע: Python, React + TypeScript, Rust; סקייל וביצועים.</p>
         <div class="actions">
           <a class="btn" href="job-716484.html">לפרטים</a>
           <a class="btn secondary" href="mailto:hagitkap@gmail.com?subject=מועמדות - #716484">שליחת קו״ח</a>
@@ -191,7 +203,7 @@
     }
     tabs.forEach(b=> b.addEventListener('click', ()=> show(b.dataset.cat)));
 
-    // Sales sub-filters (יפעלו כשתוסיפי עוד כרטיסים עם data-sector)
+    // Sales sub-filters
     const subbtns = document.querySelectorAll('#cat-sales .subbtn');
     const salesCards = document.querySelectorAll('#cat-sales .card[data-sector]');
     function filterSales(sector){
