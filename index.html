@@ -28,7 +28,7 @@
     .btn{background:var(--link);color:#fff;border:none;border-radius:10px;padding:.5rem .8rem;cursor:pointer;text-decoration:none;display:inline-block}
     .btn.secondary{background:#fff;color:var(--link);border:1px solid var(--link)}
     footer{margin:2rem auto 3rem;max-width:980px;text-align:center;color:#777}
-    footer a{color:var(--link)}
+    footer a{color:#2a5d9f}
   </style>
 </head>
 <body>
@@ -148,6 +148,16 @@
           <a class="btn secondary" href="mailto:hagitkap@gmail.com?subject=מועמדות - #717478">שליחת קו״ח</a>
         </div>
       </article>
+
+      <article class="card">
+        <h3>מנהל/ת מעבדה – עיבוד אותות/תקשורת/מכ"ם/הדמיה רפואית</h3>
+        <div class="meta"><span class="chip">רחובות</span><span class="chip">#485812</span><span class="chip">ניהול מעבדה</span></div>
+        <p>הובלה ותמיכה בפרויקטי מחקר מתקדמים; ניהול צוות מעבדה, קשרי חוץ ותפעול. יום עבודה מהבית לאחר חפיפה.</p>
+        <div class="actions">
+          <a class="btn" href="job-485812.html">לפרטים</a>
+          <a class="btn secondary" href="mailto:hagitkap@gmail.com?subject=מועמדות - #485812">שליחת קו״ח</a>
+        </div>
+      </article>
     </section>
   </div>
 
@@ -171,7 +181,7 @@
     }
     tabs.forEach(b=> b.addEventListener('click', ()=> show(b.dataset.cat)));
 
-    // Sales sub-filters (יפעל כשיהיו עוד כרטיסים עם data-sector)
+    // Sales sub-filters (יפעלו כשתוסיפי עוד כרטיסים עם data-sector)
     const subbtns = document.querySelectorAll('#cat-sales .subbtn');
     const salesCards = document.querySelectorAll('#cat-sales .card[data-sector]');
     function filterSales(sector){
