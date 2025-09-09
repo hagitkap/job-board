@@ -10,21 +10,15 @@
     body{font-family:sans-serif;margin:0;background:var(--bg);color:var(--ink)}
     header{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;background:#fff;border-bottom:1px solid #eee}
     header img{width:80px;border-radius:12px}
-    header h1{color:var(--brand);font-size:1.6rem;margin:0}
+    header h1{color:var(--brand);font-size:1.7rem;margin:0}
     header p{margin:.25rem 0 0;color:#666}
-
     .shell{max-width:980px;margin:0 auto;padding:1.25rem}
-
-    /* קטגוריות עליונות */
     .tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:.5rem 0 1rem}
     .tabbtn{background:#fff;border:1px solid #e5e5e5;border-radius:999px;padding:.5rem 1rem;cursor:pointer}
     .tabbtn.active{background:var(--brand);color:#fff;border-color:var(--brand)}
-
-    /* תתי־סינון במכירות */
     .subtabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:0 0 1rem}
     .subbtn{background:#fff;border:1px solid #e5e5e5;border-radius:999px;padding:.35rem .9rem;cursor:pointer;font-size:.9rem}
     .subbtn.active{background:#222;color:#fff;border-color:#222}
-
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
     .card{background:#fff;border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.06);padding:1rem;display:flex;flex-direction:column;gap:.5rem}
     .card h3{margin:.25rem 0;font-size:1.05rem}
@@ -33,7 +27,6 @@
     .actions{margin-top:auto;display:flex;gap:.5rem;flex-wrap:wrap}
     .btn{background:var(--link);color:#fff;border:none;border-radius:10px;padding:.5rem .8rem;cursor:pointer;text-decoration:none;display:inline-block}
     .btn.secondary{background:#fff;color:var(--link);border:1px solid var(--link)}
-
     footer{margin:2rem auto 3rem;max-width:980px;text-align:center;color:#777}
     footer a{color:var(--link)}
   </style>
@@ -48,7 +41,7 @@
   </header>
 
   <div class="shell">
-    <!-- קטגוריות עליונות -->
+    <!-- קטגוריות -->
     <div class="tabs" role="tablist" aria-label="קטגוריות משרות">
       <button class="tabbtn active" data-cat="sales" role="tab" aria-selected="true">משרות במכירות</button>
       <button class="tabbtn" data-cat="software" role="tab" aria-selected="false">משרות בתוכנה</button>
@@ -58,7 +51,6 @@
 
     <!-- SALES -->
     <section id="cat-sales" aria-label="משרות במכירות">
-      <!-- סינון לפי תתי־תחומים -->
       <div class="subtabs" aria-label="סינון מכירות">
         <button class="subbtn active" data-sector="all">הכול</button>
         <button class="subbtn" data-sector="תיירות">תיירות</button>
@@ -67,10 +59,9 @@
       </div>
 
       <div class="grid">
-        <!-- מכירות / תיירות -->
         <article class="card" data-sector="תיירות">
           <h3>מנהל/ת מכירות – תחום תיירות יוצאת</h3>
-          <div class="meta"><span class="chip">תל אביב</span><span class="chip">קוד JB-86</span><span class="chip">תיירות</span></div>
+          <div class="meta"><span class="chip">תל אביב</span><span class="chip">JB-86</span><span class="chip">תיירות</span></div>
           <p>הובלת מערך מכירות לבודדים, ניהול מוקדים, שיתופי פעולה עם סוכני נסיעות ותיאום עם שיווק ואופרציה.</p>
           <div class="actions">
             <a class="btn" href="job-708409.html">לפרטים</a>
@@ -78,17 +69,16 @@
           </div>
         </article>
 
-        <!-- מכירות / נדל״ן (דוגמה להחלפה) -->
+        <!-- דוגמאות להחלפה כשיהיו משרות נוספות -->
         <article class="card" data-sector="נדל״ן">
           <h3>מנהלי/ות מכירות – נדל״ן מגורים (דוגמה)</h3>
           <div class="meta"><span class="chip">מרכז</span><span class="chip">נדל״ן</span></div>
-          <p>מכירות פרויקטים למגורים, ליווי רוכשים ותהליכי סגירה. החליפי בטקסט המשרה האמיתי.</p>
+          <p>מכירות פרויקטים למגורים, ליווי רוכשים וסגירת עסקאות. ניתן להחליף במשרה אמיתית.</p>
           <div class="actions">
             <a class="btn secondary" href="mailto:hagitkap@gmail.com?subject=מועמדות - נדל״ן">שליחת קו״ח</a>
           </div>
         </article>
 
-        <!-- מכירות / טכנולוגי (דוגמה להחלפה) -->
         <article class="card" data-sector="טכנולוגי">
           <h3>Account Executive – SaaS (דוגמה)</h3>
           <div class="meta"><span class="chip">היברידי</span><span class="chip">טכנולוגי</span></div>
@@ -104,7 +94,7 @@
     <section id="cat-software" class="grid" aria-label="משרות בתוכנה" hidden>
       <article class="card">
         <h3>ראש/ת צוות תוכנה Embedded</h3>
-        <div class="meta"><span class="chip">כרמיאל</span><span class="chip">קוד #675061</span></div>
+        <div class="meta"><span class="chip">כרמיאל</span><span class="chip">#675061</span></div>
         <p>הובלת צוות (כ-10) מהנדסי Embedded וניהול פרויקטים מקצה לקצה עבור מוצרים קיימים ודור העתיד.</p>
         <div class="actions">
           <a class="btn" href="job-675061.html">לפרטים</a>
@@ -122,20 +112,15 @@
       </article>
     </section>
 
-    <!-- ELECTRICAL ENGINEERING -->
+    <!-- ELECTRICAL -->
     <section id="cat-electrical" class="grid" aria-label="משרות למהנדסי חשמל" hidden>
-      <!-- דוגמה – להחלפה במשרה אמיתית -->
       <article class="card">
-        <h3>מהנדס/ת חשמל – פיתוח הספק (דוגמה)</h3>
-        <div class="meta"><span class="chip">מרכז</span><span class="chip">#EE-001</span></div>
-        <p>תכנון ופיתוח ממירי הספק, דרייברים למנועים, ו-EMI/EMC. אפשר להחליף בטקסט המשרה האמיתי שלך.</p>
-        <details>
-          <summary>לפרטים מלאים</summary>
-          <p><strong>דרישות חובה:</strong> תואר בהנדסת חשמל; ניסיון בתכנון ספקי כוח/ממירים; היכרות עם תקני בטיחות/EMC.</p>
-          <p><strong>יתרון:</strong> ניסיון ב-DC/DC, תכנון ל-יעילות גבוהה, עבודה עם Altium/OrCAD.</p>
-        </details>
+        <h3>מנהל/ת תחום – תחנות השנאה ותשתיות מתח עליון</h3>
+        <div class="meta"><span class="chip">מיקום גמיש · ניוד בפרויקטים</span><span class="chip">#717478</span></div>
+        <p>ניהול כולל של תחום תחמ״שים ותשתיות מתח עליון, הובלת מרכז רווח ופיתוח עסקי מול גופים אסטרטגיים.</p>
         <div class="actions">
-          <a class="btn secondary" href="mailto:hagitkap@gmail.com?subject=מועמדות - EE-001">שליחת קו״ח</a>
+          <a class="btn" href="job-717478.html">לפרטים</a>
+          <a class="btn secondary" href="mailto:hagitkap@gmail.com?subject=מועמדות - #717478">שליחת קו״ח</a>
         </div>
       </article>
     </section>
@@ -146,7 +131,7 @@
   </footer>
 
   <script>
-    // Tabs: קטגוריות עליונות
+    // Tabs
     const tabs = document.querySelectorAll('.tabbtn');
     const sections = {
       sales: document.getElementById('cat-sales'),
@@ -160,13 +145,11 @@
     }
     tabs.forEach(b=> b.addEventListener('click', ()=> show(b.dataset.cat)));
 
-    // Subfilters: סינון תתי־תחומים במכירות
+    // Sales sub-filters
     const subbtns = document.querySelectorAll('#cat-sales .subbtn');
     const salesCards = document.querySelectorAll('#cat-sales .card[data-sector]');
     function filterSales(sector){
-      salesCards.forEach(c=>{
-        c.hidden = !(sector==='all' || c.dataset.sector===sector);
-      });
+      salesCards.forEach(c=>{ c.hidden = !(sector==='all' || c.dataset.sector===sector); });
       subbtns.forEach(b=> b.classList.toggle('active', b.dataset.sector===sector));
     }
     subbtns.forEach(b=> b.addEventListener('click', ()=> filterSales(b.dataset.sector)));
