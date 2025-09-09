@@ -43,14 +43,28 @@
   <div class="shell">
     <!-- קטגוריות -->
     <div class="tabs" role="tablist" aria-label="קטגוריות משרות">
-      <button class="tabbtn active" data-cat="sales" role="tab" aria-selected="true">משרות במכירות</button>
+      <button class="tabbtn active" data-cat="executives" role="tab" aria-selected="true">משרות הנהלה בכירה (VP/C-level)</button>
+      <button class="tabbtn" data-cat="sales" role="tab" aria-selected="false">משרות במכירות</button>
       <button class="tabbtn" data-cat="software" role="tab" aria-selected="false">משרות בתוכנה</button>
       <button class="tabbtn" data-cat="hardware" role="tab" aria-selected="false">משרות בחומרה</button>
       <button class="tabbtn" data-cat="electrical" role="tab" aria-selected="false">משרות למהנדסי חשמל</button>
     </div>
 
+    <!-- EXECUTIVES -->
+    <section id="cat-executives" class="grid" aria-label="משרות הנהלה בכירה">
+      <article class="card">
+        <h3>סמנכ"ל/ית מכירות ושיווק – נדל״ן/בנייה <span class="chip">בכירים</span><span class="chip">נדל״ן</span></h3>
+        <div class="meta"><span class="chip">מיקום גמיש</span><span class="chip">#643557</span></div>
+        <p>הובלת מערך מכירות ושיווק בחברת בנייה מובילה: אסטרטגיה, דיגיטל, פיתוח עסקי, ניהול צוות והגעה ליעדים.</p>
+        <div class="actions">
+          <a class="btn" href="job-643557.html">לפרטים</a>
+          <a class="btn secondary" href="mailto:hagitkap@gmail.com?subject=מועמדות - #643557">שליחת קו״ח</a>
+        </div>
+      </article>
+    </section>
+
     <!-- SALES -->
-    <section id="cat-sales" aria-label="משרות במכירות">
+    <section id="cat-sales" aria-label="משרות במכירות" hidden>
       <div class="subtabs" aria-label="סינון מכירות">
         <button class="subbtn active" data-sector="all">הכול</button>
         <button class="subbtn" data-sector="תיירות">תיירות</button>
@@ -66,24 +80,6 @@
           <div class="actions">
             <a class="btn" href="job-708409.html">לפרטים</a>
             <a class="btn secondary" href="mailto:hagitkap@gmail.com?subject=מועמדות - JB-86">שליחת קו״ח</a>
-          </div>
-        </article>
-
-        <article class="card" data-sector="נדל״ן">
-          <h3>מנהלי/ות מכירות – נדל״ן מגורים (דוגמה)</h3>
-          <div class="meta"><span class="chip">מרכז</span><span class="chip">נדל״ן</span></div>
-          <p>מכירות פרויקטים למגורים, ליווי רוכשים וסגירת עסקאות. ניתן להחליף במשרה אמיתית.</p>
-          <div class="actions">
-            <a class="btn secondary" href="mailto:hagitkap@gmail.com?subject=מועמדות - נדל״ן">שליחת קו״ח</a>
-          </div>
-        </article>
-
-        <article class="card" data-sector="טכנולוגי">
-          <h3>Account Executive – SaaS (דוגמה)</h3>
-          <div class="meta"><span class="chip">היברידי</span><span class="chip">טכנולוגי</span></div>
-          <p>ניהול מחזור מכירה מלא ללקוחות אנטרפרייז. החליפי בתיאור אמיתי כשיהיה.</p>
-          <div class="actions">
-            <a class="btn secondary" href="mailto:hagitkap@gmail.com?subject=מועמדות - AE SaaS">שליחת קו״ח</a>
           </div>
         </article>
       </div>
@@ -126,7 +122,7 @@
       <article class="card">
         <h3>מנהל/ת תחום – תחנות השנאה ותשתיות מתח עליון</h3>
         <div class="meta"><span class="chip">מיקום גמיש · ניוד בפרויקטים</span><span class="chip">#717478</span></div>
-        <p>ניהול כולל של תחום תחמ״שים ותשתיות מתח עליון, הובלת מרכז רווח ופיתוח עסקי מול גופים אסטרטגיים.</p>
+        <p>ניהול תחום תחמ״שים/מתח עליון, מרכז רווח ופיתוח עסקי מול גופים אסטרטגיים.</p>
         <div class="actions">
           <a class="btn" href="job-717478.html">לפרטים</a>
           <a class="btn secondary" href="mailto:hagitkap@gmail.com?subject=מועמדות - #717478">שליחת קו״ח</a>
@@ -143,6 +139,7 @@
     // Tabs
     const tabs = document.querySelectorAll('.tabbtn');
     const sections = {
+      executives: document.getElementById('cat-executives'),
       sales: document.getElementById('cat-sales'),
       software: document.getElementById('cat-software'),
       hardware: document.getElementById('cat-hardware'),
@@ -154,7 +151,7 @@
     }
     tabs.forEach(b=> b.addEventListener('click', ()=> show(b.dataset.cat)));
 
-    // Sales sub-filters
+    // Sales sub-filters (יישארו ריקים עד שתוסיפי עוד משרות/תתי־תחומים)
     const subbtns = document.querySelectorAll('#cat-sales .subbtn');
     const salesCards = document.querySelectorAll('#cat-sales .card[data-sector]');
     function filterSales(sector){
